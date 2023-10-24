@@ -1,13 +1,13 @@
-#-------------------------------------------------------------------------
+# -------------------------------------------------------------------------
 # AUTHOR: your name
 # FILENAME: title of the source file
 # SPECIFICATION: description of the program
 # FOR: CS 4250- Assignment #2
 # TIME SPENT: how long it took you to complete the assignment
-#-----------------------------------------------------------*/
+# -----------------------------------------------------------*/
 
 from pymongo import MongoClient  # import mongo client to connect
-from db_connection_mongo_solution import *
+from db_connection_mongo import *
 
 if __name__ == '__main__':
 
@@ -17,10 +17,10 @@ if __name__ == '__main__':
     # Creating a collection
     documents = db.documents
 
-    #print a menu
+    # print a menu
     print("")
     print("######### Menu ##############")
-    #print("#a - Create a category.")
+    # print("#a - Create a category.")
     print("#b - Create a document")
     print("#c - Update a document")
     print("#d - Delete a document.")
@@ -30,44 +30,44 @@ if __name__ == '__main__':
     option = ""
     while option != "q":
 
-          print("")
-          option = input("Enter a menu choice: ")
+        print("")
+        option = input("Enter a menu choice: ")
 
-          if (option == "b"):
+        if option == "b":
 
-              docId = input("Enter the ID of the document: ")
-              docText = input("Enter the text of the document: ")
-              docTitle = input("Enter the title of the document: ")
-              docDate = input("Enter the date of the document: ")
-              docCat = input("Enter the category of the document: ")
+            docId = input("Enter the ID of the document: ")
+            docText = input("Enter the text of the document: ")
+            docTitle = input("Enter the title of the document: ")
+            docDate = input("Enter the date of the document: ")
+            docCat = input("Enter the category of the document: ")
 
-              createDocument(documents, docId, docText, docTitle, docDate, docCat)
+            createDocument(documents, docId, docText, docTitle, docDate, docCat)
 
-          elif (option == "c"):
+        elif (option == "c"):
 
-              docId = input("Enter the ID of the document: ")
-              docText = input("Enter the text of the document: ")
-              docTitle = input("Enter the title of the document: ")
-              docDate = input("Enter the date of the document: ")
-              docCat = input("Enter the category of the document: ")
+            docId = input("Enter the ID of the document: ")
+            docText = input("Enter the text of the document: ")
+            docTitle = input("Enter the title of the document: ")
+            docDate = input("Enter the date of the document: ")
+            docCat = input("Enter the category of the document: ")
 
-              updateDocument(documents, docId, docText, docTitle, docDate, docCat)
+            updateDocument(documents, docId, docText, docTitle, docDate, docCat)
 
-          elif (option == "d"):
+        elif (option == "d"):
 
-              docId = input("Enter the document id to be deleted: ")
+            docId = input("Enter the document id to be deleted: ")
 
-              deleteDocument(documents, docId)
+            deleteDocument(documents, docId)
 
-          elif (option == "e"):
+        elif (option == "e"):
 
-              index = getIndex(documents)
-              print(index)
+            index = getIndex(documents)
+            print(index)
 
-          elif (option == "q"):
+        elif (option == "q"):
 
-               print("Leaving the application ... ")
+            print("Leaving the application ... ")
 
-          else:
+        else:
 
-               print("Invalid Choice.")
+            print("Invalid Choice.")
